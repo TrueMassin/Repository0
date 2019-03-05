@@ -1,0 +1,65 @@
+# depslib dependency file v1.0
+1551819418 source:c:\users\massin\desktop\szkola\programowanie obietkowe\projekt 0\src\subway.cpp
+	"../include/Subway.h"
+
+1551819418 e/Subway.h"
+
+1551819418 c:\users\massin\desktop\szkola\programowanie obietkowe\projekt 0\include\subway.h
+	<string>
+	"Train.h"
+	"Passenger.h"
+
+1551820268 .h"
+
+1551820268 c:\users\massin\desktop\szkola\programowanie obietkowe\projekt 0\include\train.h
+	<string>
+	"Passenger.h"
+
+1551818050 c:\users\massin\desktop\szkola\programowanie obietkowe\projekt 0\include\passenger.h
+	<string>
+
+1551820268 
+
+1551819973 source:c:\users\massin\desktop\szkola\programowanie obietkowe\projekt 0\src\main.cpp
+	<cstdlib>
+	<time.h>
+
+1551820268 source:c:\users\massin\desktop\szkola\programowanie obietkowe\projekt 0\src\passenger.cpp
+	"../include/Passenger.h"
+	<math.h>
+
+1551820268 source:c:\users\massin\desktop\szkola\programowanie obietkowe\projekt 0\src\train.cpp
+	"../include/Train.h"
+
+1551820268 e/Train.h"
+
+1551821038 source:/home/massin/Pulpit/Projekt 0/src/Main.cpp
+	<cstdlib>
+	<time.h>
+	<string>
+	"../include/Subway.h"
+
+1551825582 /home/massin/Pulpit/Projekt 0/include/Subway.h
+	<string>
+	"Train.h"
+	"Passenger.h"
+
+1551828053 /home/massin/Pulpit/Projekt 0/include/Train.h
+	<string>
+	"Passenger.h"
+
+1551818050 /home/massin/Pulpit/Projekt 0/include/Passenger.h
+	<string>
+
+1551820268 source:/home/massin/Pulpit/Projekt 0/src/Passenger.cpp
+	"../include/Passenger.h"
+	<math.h>
+
+1551828053 source:/home/massin/Pulpit/Projekt 0/src/Subway.cpp
+	<iostream>
+	"../include/Subway.h"
+
+1551828053 source:/home/massin/Pulpit/Projekt 0/src/Train.cpp
+	<iostream>
+	"../include/Train.h"
+
