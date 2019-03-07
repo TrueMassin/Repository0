@@ -19,9 +19,14 @@
         Train( std::string stationsList[], unsigned int tableSize );
         void goToNextStation();
         void getInformation();
+        std::string getLocation()
+        {
+            return stations[ actualStation - 1 ];
+        };
+        int getSeatNumber();
         void lastStation();
-//unsigned int howManyPassengers();
         void passengerGetIn( Passenger* newPassenger );
         void passengerGetOff( unsigned int seatNumber );
+        bool comparePassengers( unsigned int firstCompare, Passenger* secondCompare );
  };
 #endif // TRAIN_H

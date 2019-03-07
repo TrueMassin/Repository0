@@ -7,11 +7,11 @@
  */
 
  class Passenger {
-        bool isInTrain;
         bool hasTicket;
-        bool getOff;
         int seat;
     public:
+        bool isInTrain;
+        bool getOff;
         std::string startLocation;
         Passenger( std::string station );
         void getIn( unsigned int seatNumber );
@@ -23,6 +23,10 @@
         void newSeat( unsigned int number )
         {
             seat = number;
+        };
+        int getSeatNumber()
+        {
+            return seat;
         };
  };
 #endif // PASSENGER_H

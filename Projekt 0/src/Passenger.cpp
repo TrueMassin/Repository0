@@ -26,3 +26,10 @@ void Passenger::getIn( unsigned int seatNumber )
     isInTrain = true;
     seat = seatNumber;
 };
+//*********************************************
+void Passenger::whetherGetOff()
+{
+    if( ( rand() % RANDOM_CHANCE ) < RANDOM_CHANCE - 4 ) {
+        getOff = true;
+    }
+}

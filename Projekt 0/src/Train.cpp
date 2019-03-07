@@ -40,9 +40,20 @@ void Train::getInformation()
     cout << "Stacja - " << stations[ actualStation - 1 ] << endl << "Wypelnienie - " << busySeats * 100 / NUMBER_OF_SEATS << "%" << endl;
 }
 //*********************************************
+int Train::getSeatNumber()
+{
+    if( busySeats < NUMBER_OF_SEATS ) {
+        return busySeats;
+    }
+    else {
+         return -1;
+    }
+}
+//******************************************
 void Train::lastStation()
 {
     for( int i = busySeats - 1; i >= 0; --i ) {
+        seats[i]->setGetOff();
         this->passengerGetOff( i );
         --busySeats;
     }
@@ -51,10 +62,13 @@ void Train::lastStation()
 void Train::passengerGetIn( Passenger* newPassenger )
 {
     if( busySeats < NUMBER_OF_SEATS ) {
+        newPassenger->getIn( busySeats );
+//newPassenger->newSeat( busySeats );
         seats[ busySeats ] = newPassenger;
         ++busySeats;
     }
 }
+//************************************************
 void Train::passengerGetOff( unsigned int seatNumber )
 {
     --busySeats;
@@ -65,5 +79,15 @@ void Train::passengerGetOff( unsigned int seatNumber )
         seats[ busySeats ]->newSeat( seatNumber );
         seats[ seatNumber ] = seats[ busySeats ];
         seats[ busySeats ] = nullptr;
+    }
+}
+//*******************************************************
+bool Train::comparePassengers( unsigned int firstCompare, Passenger* secondCompare )
+{
+    if( seats[ firstCompare ] == secondCompare ) {
+        return true;
+    }
+    else {
+        return false;
     }
 }

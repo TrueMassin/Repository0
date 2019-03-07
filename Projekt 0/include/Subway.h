@@ -22,9 +22,10 @@
     public:
         Subway( unsigned int respSpeed = 20 );
         void addTrain( std::string stationsList[], unsigned int tableSize );
-        void addPasenger( std::string station );
+        void addPassenger( std::string station );
         void status();
         void moveOn();
         void generatePassengers();
+        void handlePassengers();
  };
 #endif // SUBWAY_H

@@ -37,6 +37,8 @@ int main()
     subway.addTrain( m2, sizeM2 );
     do {
         cout << "\033c";
+        subway.generatePassengers();
+        subway.handlePassengers();
         subway.status();
         subway.moveOn();
         this_thread::sleep_for( chrono::seconds(1) );

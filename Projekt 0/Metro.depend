@@ -33,7 +33,7 @@
 
 1551820268 e/Train.h"
 
-1551830639 source:/home/massin/Pulpit/Projekt 0/src/Main.cpp
+1551952497 source:/home/massin/Pulpit/Projekt 0/src/Main.cpp
 	<cstdlib>
 	<time.h>
 	<string>
@@ -42,27 +42,27 @@
 	<iostream>
 	"../include/Subway.h"
 
-1551945458 /home/massin/Pulpit/Projekt 0/include/Subway.h
+1551952780 /home/massin/Pulpit/Projekt 0/include/Subway.h
 	<string>
 	"Train.h"
 	"Passenger.h"
 
-1551946017 /home/massin/Pulpit/Projekt 0/include/Train.h
+1551951927 /home/massin/Pulpit/Projekt 0/include/Train.h
 	<string>
 	"Passenger.h"
 
-1551947141 /home/massin/Pulpit/Projekt 0/include/Passenger.h
+1551951927 /home/massin/Pulpit/Projekt 0/include/Passenger.h
 	<string>
 
-1551947148 source:/home/massin/Pulpit/Projekt 0/src/Passenger.cpp
+1551950169 source:/home/massin/Pulpit/Projekt 0/src/Passenger.cpp
 	"../include/Passenger.h"
 	<math.h>
 
-1551945778 source:/home/massin/Pulpit/Projekt 0/src/Subway.cpp
+1551952455 source:/home/massin/Pulpit/Projekt 0/src/Subway.cpp
 	<iostream>
 	"../include/Subway.h"
 
-1551944332 source:/home/massin/Pulpit/Projekt 0/src/Train.cpp
+1551952332 source:/home/massin/Pulpit/Projekt 0/src/Train.cpp
 	<iostream>
 	"../include/Train.h"
 

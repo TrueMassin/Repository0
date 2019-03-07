@@ -41,7 +41,7 @@ stationsNumber = 11;
      }
  }
 //********************************************
-void Subway::addPasenger( string station )
+void Subway::addPassenger( string station )
 {
     if( numberOfPassengers < NUMBER_OF_PASSENGERS ) {
         passenger[ numberOfPassengers ] = new Passenger( station );
@@ -70,6 +70,42 @@ void Subway::generatePassengers()
     unsigned int x;
     for( unsigned int i = 0; i < respawnSpeed ; ++i ) {
         x = rand() % stationsNumber;
-        addPasenger( stations[x] );
+        addPassenger( stations[x] );
     }
+}
+//*****************************************
+void Subway::handlePassengers()
+{
+    int tmp = -1;
+    string locations[ NUMBER_OF_TRAINS ];
+    for( int i = 0; i < NUMBER_OF_TRAINS; ++i ) {
+        if( train[i] ) {
+            locations[i] = train[i]->getLocation();
+        }
+    }
+    //OBSLUGA PASAZEROW POCZATEK
+    for( int i = numberOfPassengers -1; i >= 0; --i ) {
+        if( passenger[i]->getOff ) {    // OBSLUGA WYSIADANIA POCZATEK
+            tmp = passenger[i]->getSeatNumber();
+            for( unsigned int j = 0; j < numberOfTrains; ++j ) {
+                if( train[j]->comparePassengers( tmp, passenger[i] ) ) {
+                    train[j]->passengerGetOff( tmp );
+                }
+            }
+            delete passenger[i];
+            passenger[i] = nullptr;
+            if( i != static_cast<int>( numberOfPassengers - 1 ) ) {
+                passenger[i] = passenger[ numberOfPassengers - 1 ];
+                passenger[ numberOfPassengers - 1 ] = nullptr;
+            }
+            --numberOfPassengers;
+        } // OBSLUGA WYSIADANIA KONIEC
+        if( !( passenger[i]->isInTrain ) ) { //OBSLUGA WSIADANIA POCZATEK
+            for( unsigned int j = 0; j < numberOfTrains; ++j ) {
+                if( passenger[i]->startLocation == locations[j] ) {
+                        train[j]->passengerGetIn( passenger[i] );
+                }
+            }
+        }//OBSLUGA WYSIADANIA KONIEC
+    }//OBSLUGA PASAZEROW KONIEC
 }
