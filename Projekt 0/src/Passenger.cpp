@@ -9,8 +9,10 @@ using namespace std;
 
  Passenger::Passenger( string station )
  {
+     seat = -1;
      isInTrain = false;
-     location = station;
+     getOff = false;
+     startLocation = station;
      if( ( rand() % RANDOM_CHANCE ) < RANDOM_CHANCE - 3 ) {
         hasTicket = true;
      }
@@ -19,3 +21,8 @@ using namespace std;
      }
  }
 //**********************************************
+void Passenger::getIn( unsigned int seatNumber )
+{
+    isInTrain = true;
+    seat = seatNumber;
+};

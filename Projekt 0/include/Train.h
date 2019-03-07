@@ -19,5 +19,9 @@
         Train( std::string stationsList[], unsigned int tableSize );
         void goToNextStation();
         void getInformation();
+        void lastStation();
+//unsigned int howManyPassengers();
+        void passengerGetIn( Passenger* newPassenger );
+        void passengerGetOff( unsigned int seatNumber );
  };
 #endif // TRAIN_H

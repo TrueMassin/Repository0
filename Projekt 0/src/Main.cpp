@@ -38,6 +38,7 @@ int main()
     do {
         cout << "\033c";
         subway.status();
+        subway.moveOn();
         this_thread::sleep_for( chrono::seconds(1) );
     } while( true );
     return 0;

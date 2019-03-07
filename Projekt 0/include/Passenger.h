@@ -8,11 +8,21 @@
 
  class Passenger {
         bool isInTrain;
-        std::string location;
         bool hasTicket;
+        bool getOff;
+        int seat;
     public:
+        std::string startLocation;
         Passenger( std::string station );
+        void getIn( unsigned int seatNumber );
         void whetherGetOff();
-        void getOff();
+        void setGetOff()
+        {
+            getOff = true;
+        };
+        void newSeat( unsigned int number )
+        {
+            seat = number;
+        };
  };
 #endif // PASSENGER_H
