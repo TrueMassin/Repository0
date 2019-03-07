@@ -1,4 +1,4 @@
-CC = gcc
+CC = g++
 
 all: Main.o Passenger.o Subway.o Train.o
 	$(CC) build/Main.o build/Passenger.o build/Subway.o build/Train.o -o bin/Metro
