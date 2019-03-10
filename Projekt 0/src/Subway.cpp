@@ -43,10 +43,8 @@ stationsNumber = 11;
 //********************************************
 void Subway::addPassenger( string station )
 {
-    if( numberOfPassengers < NUMBER_OF_PASSENGERS ) {
         passenger[ numberOfPassengers ] = new Passenger( station );
         ++numberOfPassengers;
-    }
 }
 //*******************************************
 void Subway::status()
@@ -92,7 +90,6 @@ void Subway::handlePassengers()
                     train[j]->passengerGetOff( tmp );
                 }
             }
-            delete passenger[i];
             passenger[i] = nullptr;
             if( i != static_cast<int>( numberOfPassengers - 1 ) ) {
                 passenger[i] = passenger[ numberOfPassengers - 1 ];

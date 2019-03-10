@@ -61,12 +61,10 @@ void Train::lastStation()
 //*********************************************
 void Train::passengerGetIn( Passenger* newPassenger )
 {
-    if( busySeats < NUMBER_OF_SEATS ) {
         newPassenger->getIn( busySeats );
 //newPassenger->newSeat( busySeats );
         seats[ busySeats ] = newPassenger;
         ++busySeats;
-    }
 }
 //************************************************
 void Train::passengerGetOff( unsigned int seatNumber )
