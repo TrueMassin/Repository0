@@ -21,9 +21,11 @@ using namespace std;
  void Train::goToNextStation()
  {
      if( actualStation == numberOfStations ) {
+        this->lastStation();
         direction = false;
      }
      else if( actualStation == 1 ) {
+        this->lastStation();
         direction = true;
      }
 
@@ -52,10 +54,9 @@ int Train::getSeatNumber()
 //******************************************
 void Train::lastStation()
 {
-    for( int i = busySeats - 1; i >= 0; --i ) {
+    for( int i = ( busySeats - 1 ); i >= 0; --i ) {
         seats[i]->setGetOff();
         this->passengerGetOff( i );
-        --busySeats;
     }
 }
 //*********************************************
@@ -63,7 +64,6 @@ void Train::passengerGetIn( Passenger* newPassenger )
 {
     if( busySeats < NUMBER_OF_SEATS ) {
         newPassenger->getIn( busySeats );
-//newPassenger->newSeat( busySeats );
         seats[ busySeats ] = newPassenger;
         ++busySeats;
     }

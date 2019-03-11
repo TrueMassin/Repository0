@@ -63,6 +63,11 @@ void Subway::moveOn()
     for( unsigned int i = 0; i < numberOfTrains ; ++i ) {
         train[i]->goToNextStation();
     }
+    for( unsigned int i = 0; i < numberOfPassengers; ++i ) {
+        if( !( passenger[i]->getOff ) ) {
+            passenger[i]->whetherGetOff();
+        }
+    }
 }
 //******************************************
 void Subway::generatePassengers()
@@ -88,7 +93,7 @@ void Subway::handlePassengers()
         if( passenger[i]->getOff ) {    // OBSLUGA WYSIADANIA POCZATEK
             tmp = passenger[i]->getSeatNumber();
             for( unsigned int j = 0; j < numberOfTrains; ++j ) {
-                if( train[j]->comparePassengers( tmp, passenger[i] ) ) {
+                if( tmp >= 0 && train[j]->comparePassengers( tmp, passenger[i] ) ) {
                     train[j]->passengerGetOff( tmp );
                 }
             }

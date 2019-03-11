@@ -4,7 +4,7 @@
 #include "Train.h"
 #include "Passenger.h"
 #define NUMBER_OF_TRAINS 2
-#define NUMBER_OF_PASSENGERS 100
+#define NUMBER_OF_PASSENGERS 200
 #define NUMBER_OF_STATIONS 20
 
 /**
@@ -20,7 +20,7 @@
         unsigned int numberOfPassengers;
         unsigned int respawnSpeed;
     public:
-        Subway( unsigned int respSpeed = 20 );
+        Subway( unsigned int respSpeed = 50 );
         void addTrain( std::string stationsList[], unsigned int tableSize );
         void addPassenger( std::string station );
         void status();
